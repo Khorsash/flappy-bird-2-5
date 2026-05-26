@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cayw3bsfe87qs"]
+
+[ext_resource type="Script" uid="uid://bhvn7nw5erin8" path="res://LeftBorder.cs" id="1_smqhh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_guj1b"]
+normal = Vector2(1, 0)
+
+[node name="LeftBorder" type="Area2D" unique_id=122202417]
+script = ExtResource("1_smqhh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940503293]
+shape = SubResource("WorldBoundaryShape2D_guj1b")

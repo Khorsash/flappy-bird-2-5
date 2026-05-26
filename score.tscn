@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cjgr7qetft87b"]
+
+[ext_resource type="Script" uid="uid://cr5u40lk163lc" path="res://Score.cs" id="1_ceanc"]
+[ext_resource type="FontFile" uid="uid://b564xpksd22gg" path="res://MonaspaceKrypton-Regular.otf" id="1_t1x8i"]
+
+[node name="Score" type="Control" unique_id=1399574042]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ceanc")
+
+[node name="Label" type="Label" parent="." unique_id=1406447511]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 3.0
+offset_right = 662.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_t1x8i")
+theme_override_font_sizes/font_size = 40
+text = "0"

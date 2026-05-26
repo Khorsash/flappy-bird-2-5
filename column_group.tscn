@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bk22waji5r5ub"]
+
+[ext_resource type="Script" uid="uid://bcr866exjerl0" path="res://ColumnGroup.cs" id="1_qc0as"]
+[ext_resource type="Script" uid="uid://c76dq1etljunh" path="res://ColumnBorder.cs" id="2_wjsq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc0as"]
+size = Vector2(144, 20)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qc0as"]
+normal = Vector2(-1, 0)
+distance = -100.0
+
+[node name="ColumnGroup" type="Area2D" unique_id=1668411514]
+script = ExtResource("1_qc0as")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933731850]
+position = Vector2(152, -1)
+shape = SubResource("RectangleShape2D_qc0as")
+
+[node name="ColumnBorder" type="Area2D" parent="." unique_id=163683285]
+script = ExtResource("2_wjsq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColumnBorder" unique_id=1926319510]
+shape = SubResource("WorldBoundaryShape2D_qc0as")

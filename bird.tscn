@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://csvesjnrc44wx"]
+
+[ext_resource type="Script" uid="uid://bjsqsofssiq1q" path="res://Bird.cs" id="1_crnqq"]
+[ext_resource type="Texture2D" uid="uid://du1f2kmmrml34" path="res://bird1.png" id="1_g5k2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owhn0"]
+size = Vector2(50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g5k2s"]
+size = Vector3(50, 50, 5)
+
+[node name="Bird" type="CharacterBody2D" unique_id=57461073]
+script = ExtResource("1_crnqq")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1994937821]
+shape = SubResource("RectangleShape2D_owhn0")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=790647059]
+visible = false
+mesh = SubResource("BoxMesh_g5k2s")
+
+[node name="trigger" type="Area2D" parent="." unique_id=700062896]
+
+[node name="hitbox" type="CollisionShape2D" parent="trigger" unique_id=794817669]
+shape = SubResource("RectangleShape2D_owhn0")
+
+[node name="Bird1" type="Sprite2D" parent="." unique_id=226221432]
+position = Vector2(0.25, 0.5)
+scale = Vector2(0.29117647, 0.20675105)
+texture = ExtResource("1_g5k2s")
+
+[node name="audi" type="AudioStreamPlayer" parent="." unique_id=1749744408]

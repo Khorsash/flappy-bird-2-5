@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cimfybpb305qm"]
+
+[ext_resource type="Script" uid="uid://dunhkxfkh0l4a" path="res://BottomBorder.cs" id="1_yhbxy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rtp6e"]
+
+[node name="BottomBorder" type="Area2D" unique_id=1293518876]
+script = ExtResource("1_yhbxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2108158999]
+shape = SubResource("WorldBoundaryShape2D_rtp6e")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bvupvixf540d4"]
+
+[ext_resource type="Texture2D" uid="uid://b4whbpv87i6l" path="res://columndown.png" id="1_2e7mv"]
+[ext_resource type="Script" uid="uid://b8wvwqknt0w7t" path="res://Column.cs" id="1_so666"]
+[ext_resource type="Texture2D" uid="uid://dbd0kv2tu0f7h" path="res://columnup.png" id="2_so666"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epfla"]
+size = Vector2(177, 360)
+
+[node name="Column" type="Area2D" unique_id=1142547702]
+scale = Vector2(0.5, 1)
+script = ExtResource("1_so666")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1650896713]
+position = Vector2(87.14285, -180)
+shape = SubResource("RectangleShape2D_epfla")
+
+[node name="Columndown" type="Sprite2D" parent="." unique_id=36323600]
+visible = false
+position = Vector2(85.71429, -181)
+texture = ExtResource("1_2e7mv")
+
+[node name="Columnup" type="Sprite2D" parent="." unique_id=1420946964]
+visible = false
+position = Vector2(90, -182)
+texture = ExtResource("2_so666")
