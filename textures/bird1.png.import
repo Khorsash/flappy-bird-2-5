@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbd0kv2tu0f7h"
-path="res://.godot/imported/columnup.png-d4ff69cec85e36ab64796adaf9959a07.ctex"
+uid="uid://du1f2kmmrml34"
+path="res://.godot/imported/bird1.png-484db382d623b394ed0a2061ed03b4be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://columnup.png"
-dest_files=["res://.godot/imported/columnup.png-d4ff69cec85e36ab64796adaf9959a07.ctex"]
+source_file="res://textures/bird1.png"
+dest_files=["res://.godot/imported/bird1.png-484db382d623b394ed0a2061ed03b4be.ctex"]
 
 [params]
 

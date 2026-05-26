@@ -12,7 +12,7 @@ public partial class Bird : CharacterBody2D
 
 	public override void _Ready()
 	{
-		var stream = GD.Load<AudioStreamMP3>("res://mp.mp3");
+		var stream = GD.Load<AudioStreamMP3>("res://audio/mp.mp3");
 		audi = GetNode<AudioStreamPlayer>("audi");
 		audi.Stream = stream;
 	}

@@ -38,8 +38,8 @@ public partial class Main : Node2D
 		menu.PlayButtonPressed += StartGame;
 		isRunning = false;
 		audi0 = GetNode<AudioStreamPlayer>("audi");
-		bg = GD.Load<AudioStreamMP3>("res://bg.mp3");
-		jsjp = GD.Load<AudioStreamMP3>("res://jsjp.mp3");
+		bg = GD.Load<AudioStreamMP3>("res://audio/bg.mp3");
+		jsjp = GD.Load<AudioStreamMP3>("res://audio/jsjp.mp3");
 		jsjp.Loop = true;
 
 	}

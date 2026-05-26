@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bvupvixf540d4"]
 
-[ext_resource type="Texture2D" uid="uid://b4whbpv87i6l" path="res://columndown.png" id="1_2e7mv"]
+[ext_resource type="Texture2D" uid="uid://b4whbpv87i6l" path="res://textures/columndown.png" id="1_2e7mv"]
 [ext_resource type="Script" uid="uid://b8wvwqknt0w7t" path="res://Column.cs" id="1_so666"]
-[ext_resource type="Texture2D" uid="uid://dbd0kv2tu0f7h" path="res://columnup.png" id="2_so666"]
+[ext_resource type="Texture2D" uid="uid://dbd0kv2tu0f7h" path="res://textures/columnup.png" id="2_so666"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epfla"]
 size = Vector2(177, 360)

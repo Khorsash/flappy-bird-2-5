@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csvesjnrc44wx"]
 
 [ext_resource type="Script" uid="uid://bjsqsofssiq1q" path="res://Bird.cs" id="1_crnqq"]
-[ext_resource type="Texture2D" uid="uid://du1f2kmmrml34" path="res://bird1.png" id="1_g5k2s"]
+[ext_resource type="Texture2D" uid="uid://du1f2kmmrml34" path="res://textures/bird1.png" id="1_g5k2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owhn0"]
 size = Vector2(50, 50)
