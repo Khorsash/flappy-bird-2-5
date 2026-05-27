@@ -11,13 +11,16 @@ public partial class Main : Node2D
 	public PackedScene cgs;
 	public Menu menu;
 	public Score scorelabel;
+	public SkinChooser skinChooser;
 	public Vector2 ScreenSize;
 	public bool isRunning;
 	public Tm hardnessTimer;
 	public Tm nextColumnTimer;
 	public double decrNCTValueBy; // where NCT is Next Column Time
 	public int score = 0;
+	public float startHardness = 2;
 	public float hardness = 2;
+	public float maxHardness = 5;
 	[Export]
 	public int hardnessIncreaseSpeed = 100; // which can be also called count of hardness increasings
 	[Export]
@@ -31,17 +34,18 @@ public partial class Main : Node2D
 		hardnessTimer = new Tm(20);
 		nextColumnTimer = new Tm(4);
 		bird = GetNode<Bird>("Bird");
-		menu = GetNode<Menu>("menu");
+		menu = GetNode<Menu>("Menu");
 		scorelabel = GetNode<Score>("Score");
+		skinChooser = GetNode<SkinChooser>("SkinChooser");
 		cgs = GD.Load<PackedScene>("res://column_group.tscn");
 		ScreenSize = GetViewport().GetVisibleRect().Size;
 		menu.PlayButtonPressed += StartGame;
+		skinChooser.SkinChanged += () => bird.SetSkin(skinChooser.Skin);
 		isRunning = false;
 		audi0 = GetNode<AudioStreamPlayer>("audi");
 		bg = GD.Load<AudioStreamMP3>("res://audio/bg.mp3");
 		jsjp = GD.Load<AudioStreamMP3>("res://audio/jsjp.mp3");
 		jsjp.Loop = true;
-
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,7 +57,10 @@ public partial class Main : Node2D
 		if(hardnessTimer.HasEllapsed()) 
 		{
 			hardnessTimer.Reset();
-			hardness += 3/hardnessIncreaseSpeed;
+			ColumnSpeed = ColumnSpeed / hardness * startHardness;
+			if(hardness < maxHardness) 
+				hardness += maxHardness/hardnessIncreaseSpeed;
+			ColumnSpeed = ColumnSpeed * hardness / startHardness;
 		}
 		if(nextColumnTimer.HasEllapsed()) 
 		{
@@ -75,15 +82,21 @@ public partial class Main : Node2D
 			if(n is ColumnGroup cg)
 				cg.QueueFree();
 		menu.PlayAgain();
+		skinChooser.Show();
 	}
 
 	public void StartGame()
 	{
 		menu.Hide();
+		skinChooser.Hide();
 		scorelabel.Show();
 		bird.isRunning = true;
 		bird.SetHeight(ScreenSize.Y/10);
 		score = 0;
+		hardness = 2;
+		ColumnSpeed = 200;
+		hardnessTimer = new Tm(20);
+		nextColumnTimer = new Tm(4);
 		scorelabel.SetScore(score);
 		isRunning = true;
 		GetNode<BottomBorder>("bottom_border").TouchedBorder += OnGameOver;
@@ -100,6 +113,10 @@ public partial class Main : Node2D
 		cg.GetNode<ColumnBorder>("ColumnBorder").PointAchieved -= AddOneScore;
 		RemoveChild(cg);
 		cg.QueueFree();
+		int c = 0;
+		foreach(Node n in GetChildren()) 
+			if(n is ColumnGroup) c++;
+		GD.Print($"Column count: {c}");
 	}
 	
 	public void AddOneScore()

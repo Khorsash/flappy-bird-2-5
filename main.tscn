@@ -7,15 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://csvesjnrc44wx" path="res://bird.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dhqbq2p0jkhyk" path="res://menu.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cjgr7qetft87b" path="res://score.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://n4rtkchl41he" path="res://skin_chooser.tscn" id="8_5vw27"]
 
 [node name="main" type="Node2D" unique_id=1930728409]
 script = ExtResource("1_1bvp3")
 
-[node name="bottom_border" parent="." unique_id=1293518876 instance=ExtResource("2_0xm2m")]
-position = Vector2(609, 719)
+[node name="upper_border" parent="." unique_id=1293518876 instance=ExtResource("2_0xm2m")]
+position = Vector2(623, -18)
+rotation = 3.1415927
+
+[node name="bottom_border" parent="." unique_id=872178579 instance=ExtResource("2_0xm2m")]
+position = Vector2(624, 719)
 
 [node name="left_border" parent="." unique_id=122202417 instance=ExtResource("3_7mycd")]
-position = Vector2(-4, 330)
+position = Vector2(-43, 342)
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1575156533]
 position = Vector2(640.711, 360)
@@ -23,13 +28,25 @@ scale = Vector2(2.123703, 1.9140002)
 texture = ExtResource("3_h2yge")
 
 [node name="Bird" parent="." unique_id=57461073 instance=ExtResource("4_1bvp3")]
-position = Vector2(638, 228.00002)
+position = Vector2(631, 228.00002)
 scale = Vector2(1.5, 1.5)
 
-[node name="menu" parent="." unique_id=1358300397 instance=ExtResource("5_lquwl")]
+[node name="Menu" parent="." unique_id=1358300397 instance=ExtResource("5_lquwl")]
 
 [node name="Score" parent="." unique_id=1399574042 instance=ExtResource("7_272bh")]
 visible = false
 z_index = 1000
+
+[node name="SkinChooser" parent="." unique_id=1482590211 instance=ExtResource("8_5vw27")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 750.0
+offset_top = 200.0
+offset_right = 750.0
+offset_bottom = 200.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(1.4, 1.4)
 
 [node name="audi" type="AudioStreamPlayer" parent="." unique_id=1523883130]

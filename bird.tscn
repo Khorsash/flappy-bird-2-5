@@ -2,12 +2,102 @@
 
 [ext_resource type="Script" uid="uid://bjsqsofssiq1q" path="res://Bird.cs" id="1_crnqq"]
 [ext_resource type="Texture2D" uid="uid://du1f2kmmrml34" path="res://textures/bird1.png" id="1_g5k2s"]
+[ext_resource type="Texture2D" uid="uid://dknvbq6vjouqk" path="res://textures/rb.png" id="3_j88tq"]
+[ext_resource type="Texture2D" uid="uid://dvhsoubl3bcgt" path="res://textures/rb2.png" id="4_6ljjq"]
+[ext_resource type="Texture2D" uid="uid://e0mdj3200ypg" path="res://textures/rb1.png" id="5_axl6x"]
+[ext_resource type="Texture2D" uid="uid://bp7cs30btqsp6" path="res://textures/bird2.png" id="6_2o5yp"]
+[ext_resource type="Texture2D" uid="uid://bhsd80g3gt7vy" path="res://textures/bird3.png" id="7_k3v35"]
+[ext_resource type="Texture2D" uid="uid://dgtixk1jxj4pi" path="res://textures/bird4.png" id="8_6nk3w"]
+[ext_resource type="Texture2D" uid="uid://bnqxe41k6aaeb" path="res://textures/bird5.png" id="9_k3v35"]
+[ext_resource type="Texture2D" uid="uid://7805t2qxludm" path="res://textures/s.png" id="10_6nk3w"]
+[ext_resource type="Texture2D" uid="uid://bgv06d35fgvkj" path="res://textures/s1.png" id="11_w265n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owhn0"]
 size = Vector2(50, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g5k2s"]
 size = Vector3(50, 50, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j88tq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6ljjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j88tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axl6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j88tq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6ljjq")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ljjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g5k2s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g5k2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2o5yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k3v35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6nk3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k3v35")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3v35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_6nk3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_6nk3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w265n")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}]
 
 [node name="Bird" type="CharacterBody2D" unique_id=57461073]
 script = ExtResource("1_crnqq")
@@ -24,9 +114,27 @@ mesh = SubResource("BoxMesh_g5k2s")
 [node name="hitbox" type="CollisionShape2D" parent="trigger" unique_id=794817669]
 shape = SubResource("RectangleShape2D_owhn0")
 
-[node name="Bird1" type="Sprite2D" parent="." unique_id=226221432]
-position = Vector2(0.25, 0.5)
-scale = Vector2(0.29117647, 0.20675105)
-texture = ExtResource("1_g5k2s")
-
 [node name="audi" type="AudioStreamPlayer" parent="." unique_id=1749744408]
+
+[node name="SerbKitty" type="AnimatedSprite2D" parent="." unique_id=77676791]
+visible = false
+position = Vector2(3.9999998, -2)
+scale = Vector2(0.056640625, 0.11631944)
+sprite_frames = SubResource("SpriteFrames_j88tq")
+animation = &"jump"
+autoplay = "default"
+
+[node name="Bird" type="AnimatedSprite2D" parent="." unique_id=2080958627]
+visible = false
+scale = Vector2(0.29411766, 0.21097048)
+sprite_frames = SubResource("SpriteFrames_6ljjq")
+animation = &"jump"
+autoplay = "default"
+
+[node name="Sajkaca" type="AnimatedSprite2D" parent="." unique_id=179787213]
+visible = false
+position = Vector2(2, 2)
+scale = Vector2(0.3011583, 0.40979382)
+sprite_frames = SubResource("SpriteFrames_k3v35")
+animation = &"jump"
+autoplay = "default"
