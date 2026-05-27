@@ -8,11 +8,12 @@ public partial class LeftBorder : Area2D
 	public delegate void ColumnGroupEnterEventHandler(ColumnGroup cg);
 	public override void _Ready()
 	{
-		
+		AreaEntered += OnEnter;
 	}
 
 	public void OnEnter(Area2D area2D)
 	{
+		GD.Print("Area2D enters");
 		if(area2D is ColumnGroup cg) 
 			EmitSignal(SignalName.ColumnGroupEnter, cg);
 	}

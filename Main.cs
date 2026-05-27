@@ -100,6 +100,7 @@ public partial class Main : Node2D
 		scorelabel.SetScore(score);
 		isRunning = true;
 		GetNode<BottomBorder>("bottom_border").TouchedBorder += OnGameOver;
+		GetNode<BottomBorder>("upper_border").TouchedBorder += OnGameOver;
 		GetNode<LeftBorder>("left_border").ColumnGroupEnter += DisconnectFromColumnGroupEvents;
 		audi0.Stop();
 		audi0.Stream = jsjp;

@@ -13,7 +13,7 @@
 script = ExtResource("1_1bvp3")
 
 [node name="upper_border" parent="." unique_id=1293518876 instance=ExtResource("2_0xm2m")]
-position = Vector2(623, -18)
+position = Vector2(618, -67)
 rotation = 3.1415927
 
 [node name="bottom_border" parent="." unique_id=872178579 instance=ExtResource("2_0xm2m")]
