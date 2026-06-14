@@ -7,10 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://csvesjnrc44wx" path="res://bird.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dhqbq2p0jkhyk" path="res://menu.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cjgr7qetft87b" path="res://score.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://c1u5t7hyxvyut" path="res://map_chooser.tscn" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://n4rtkchl41he" path="res://skin_chooser.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cla4u3j04uy2r" path="res://textures/image.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://cyipow8abkf5l" path="res://textures/bg2.png" id="10_efxa6"]
 
 [node name="main" type="Node2D" unique_id=1930728409]
 script = ExtResource("1_1bvp3")
+
+[node name="Map1" type="Sprite2D" parent="." unique_id=1656333425]
+visible = false
+position = Vector2(638.99994, 361.50003)
+scale = Vector2(2.1299999, 1.9173334)
+texture = ExtResource("3_h2yge")
+
+[node name="Map2" type="Sprite2D" parent="." unique_id=919858054]
+visible = false
+position = Vector2(632.49994, 359.50003)
+scale = Vector2(1.2085713, 1.3072728)
+texture = ExtResource("10_efxa6")
 
 [node name="upper_border" parent="." unique_id=1293518876 instance=ExtResource("2_0xm2m")]
 position = Vector2(618, -67)
@@ -22,22 +37,30 @@ position = Vector2(624, 719)
 [node name="left_border" parent="." unique_id=122202417 instance=ExtResource("3_7mycd")]
 position = Vector2(-43, 342)
 
-[node name="Bg" type="Sprite2D" parent="." unique_id=1575156533]
-position = Vector2(640.711, 360)
-scale = Vector2(2.123703, 1.9140002)
-texture = ExtResource("3_h2yge")
-
 [node name="Bird" parent="." unique_id=57461073 instance=ExtResource("4_1bvp3")]
 position = Vector2(631, 228.00002)
 scale = Vector2(1.5, 1.5)
 
 [node name="Menu" parent="." unique_id=1358300397 instance=ExtResource("5_lquwl")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" parent="." unique_id=1399574042 instance=ExtResource("7_272bh")]
 visible = false
 z_index = 1000
 
-[node name="SkinChooser" parent="." unique_id=1482590211 instance=ExtResource("8_5vw27")]
+[node name="MapChooser" parent="." unique_id=1482590211 instance=ExtResource("8_4c57u")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 660.0
+offset_top = 400.0
+offset_right = 660.0
+offset_bottom = 400.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(1.4, 1.4)
+
+[node name="SkinChooser" parent="." unique_id=1740492256 instance=ExtResource("8_5vw27")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -48,5 +71,9 @@ offset_bottom = 200.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(1.4, 1.4)
+
+[node name="Image" type="Sprite2D" parent="." unique_id=264807834]
+position = Vector2(99, 332)
+texture = ExtResource("9_kek77")
 
 [node name="audi" type="AudioStreamPlayer" parent="." unique_id=1523883130]

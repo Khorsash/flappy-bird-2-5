@@ -37,6 +37,11 @@ public partial class ColumnGroup : Area2D
 		c1.SetHeight(center - gapSize / 2);
 		c2.SetHeight(center + gapSize / 2 + vh / 2);
 	}
+	public void SetMap(string mapName)
+	{
+		GetNode<Column>("c1").SetMap(mapName);
+		GetNode<Column>("c2").SetMap(mapName);
+	}
 
 	public void SetSpeed(float speed)
 	{

@@ -12,6 +12,8 @@ public partial class Main : Node2D
 	public Menu menu;
 	public Score scorelabel;
 	public SkinChooser skinChooser;
+	public MapChooser mapChooser;
+	public string Map;
 	public Vector2 ScreenSize;
 	public bool isRunning;
 	public Tm hardnessTimer;
@@ -27,7 +29,7 @@ public partial class Main : Node2D
 	public float ColumnSpeed = 200;
 	public AudioStreamPlayer audi0;
 	public AudioStreamMP3 bg;
-	public AudioStreamMP3 jsjp;
+	public Dictionary<string, AudioStreamMP3> bgm;
 	public override void _Ready()
 	{
 		decrNCTValueBy = (4-0.4)/ColumnSpeed;
@@ -37,15 +39,21 @@ public partial class Main : Node2D
 		menu = GetNode<Menu>("Menu");
 		scorelabel = GetNode<Score>("Score");
 		skinChooser = GetNode<SkinChooser>("SkinChooser");
+		mapChooser = GetNode<MapChooser>("MapChooser");
+		Map = mapChooser.Map;
 		cgs = GD.Load<PackedScene>("res://column_group.tscn");
 		ScreenSize = GetViewport().GetVisibleRect().Size;
 		menu.PlayButtonPressed += StartGame;
 		skinChooser.SkinChanged += () => bird.SetSkin(skinChooser.Skin);
+		mapChooser.MapChanged += OnMapChange;
 		isRunning = false;
 		audi0 = GetNode<AudioStreamPlayer>("audi");
 		bg = GD.Load<AudioStreamMP3>("res://audio/bg.mp3");
-		jsjp = GD.Load<AudioStreamMP3>("res://audio/jsjp.mp3");
-		jsjp.Loop = true;
+		bgm = new Dictionary<string, AudioStreamMP3>();
+		bgm["Map1"] = GD.Load<AudioStreamMP3>("res://audio/jsjp.mp3");
+		bgm["Map2"] = GD.Load<AudioStreamMP3>("res://audio/jebg.mp3");
+		foreach(var m in bgm.Values) m.Loop = true;
+		OnMapChange();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,6 +77,21 @@ public partial class Main : Node2D
 
 		}
 	}
+	public void OnMapChange()
+	{
+		GD.Print($"Map before: {Map}");
+		try 
+		{
+			GetNode<Sprite2D>(Map).Hide();
+			Map = mapChooser.Map;
+			GetNode<Sprite2D>(Map).Show();
+		}
+		catch(Exception e)
+		{
+			GD.Print(e.ToString());
+		}
+		GD.Print($"Map after: {Map}");
+	}
 
 	public void OnGameOver()
 	{
@@ -83,12 +106,14 @@ public partial class Main : Node2D
 				cg.QueueFree();
 		menu.PlayAgain();
 		skinChooser.Show();
+		mapChooser.Show();
 	}
 
 	public void StartGame()
 	{
 		menu.Hide();
 		skinChooser.Hide();
+		mapChooser.Hide();
 		scorelabel.Show();
 		bird.isRunning = true;
 		bird.SetHeight(ScreenSize.Y/10);
@@ -103,7 +128,7 @@ public partial class Main : Node2D
 		GetNode<BottomBorder>("upper_border").TouchedBorder += OnGameOver;
 		GetNode<LeftBorder>("left_border").ColumnGroupEnter += DisconnectFromColumnGroupEvents;
 		audi0.Stop();
-		audi0.Stream = jsjp;
+		audi0.Stream = bgm[Map];
 		audi0.Play();
 	}
 
@@ -129,6 +154,7 @@ public partial class Main : Node2D
 	{
 		ColumnGroup cg = cgs.Instantiate<ColumnGroup>();
 		cg.SetHardness(hardness, ScreenSize.Y);
+		cg.SetMap(Map);
 		cg.SetSpeed(ColumnSpeed);
 		cg.GetNode<Column>("c1").TouchedColumn += OnGameOver;
 		cg.GetNode<Column>("c2").TouchedColumn += OnGameOver;

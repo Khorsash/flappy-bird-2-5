@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c1u5t7hyxvyut"]
+
+[ext_resource type="Script" uid="uid://cpuic5475tki6" path="res://MapChooser.cs" id="1_273wt"]
+[ext_resource type="Texture2D" uid="uid://blhfi8vcnts5t" path="res://textures/bg.png" id="3_273wt"]
+[ext_resource type="Texture2D" uid="uid://cyipow8abkf5l" path="res://textures/bg2.png" id="4_4m84w"]
+[ext_resource type="FontFile" uid="uid://b564xpksd22gg" path="res://MonaspaceKrypton-Regular.otf" id="12_mf08t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp7l7"]
+bg_color = Color(0.021181231, 0.065696925, 0.17947686, 0.53333336)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5522"]
+bg_color = Color(0.10271313, 0.21567622, 0.46684813, 0.53333336)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MapChooser" type="Control" unique_id=1482590211]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -982.0
+offset_bottom = -583.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_273wt")
+
+[node name="MapName" type="Label" parent="." unique_id=1649750160]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 129.0
+offset_right = 241.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("12_mf08t")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="." unique_id=278047242]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 57.0
+offset_right = 337.0
+offset_bottom = 88.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qp7l7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h5522")
+text = ">"
+
+[node name="Previous" type="Button" parent="." unique_id=2143214733]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 56.0
+offset_right = 98.0
+offset_bottom = 87.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qp7l7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h5522")
+text = "<"
+
+[node name="Map2" type="Sprite2D" parent="." unique_id=1583174140]
+visible = false
+position = Vector2(206, 65.99999)
+scale = Vector2(0.2, 0.214)
+texture = ExtResource("4_4m84w")
+
+[node name="Map1" type="Sprite2D" parent="." unique_id=1458227627]
+visible = false
+position = Vector2(206, 65)
+scale = Vector2(0.35, 0.315)
+texture = ExtResource("3_273wt")

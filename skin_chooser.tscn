@@ -12,8 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://7805t2qxludm" path="res://textures/s.png" id="9_xnwtr"]
 [ext_resource type="Texture2D" uid="uid://bgv06d35fgvkj" path="res://textures/s1.png" id="10_g15ok"]
 [ext_resource type="FontFile" uid="uid://b564xpksd22gg" path="res://MonaspaceKrypton-Regular.otf" id="12_h5522"]
+[ext_resource type="Texture2D" uid="uid://cxscx121sek1x" path="res://textures/image222.png" id="13_dvy5q"]
+[ext_resource type="Texture2D" uid="uid://ct4jil5ya84p0" path="res://textures/image228.png" id="14_m2m8l"]
+[ext_resource type="Texture2D" uid="uid://cla4u3j04uy2r" path="res://textures/image.png" id="15_gfdhi"]
+[ext_resource type="Texture2D" uid="uid://bn0cuy5k52nq7" path="res://textures/image230.png" id="15_xnwtr"]
+[ext_resource type="Texture2D" uid="uid://dc246jkvoil2w" path="res://textures/image229.png" id="16_g15ok"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4303f"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ek68o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -44,7 +49,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ek68o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4303f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -94,6 +99,101 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yq04o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_dvy5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_dvy5q")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y68tr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_m2m8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_m2m8l")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pn3l6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_gfdhi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_gfdhi")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3cvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_xnwtr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_xnwtr")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nche2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_g15ok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_g15ok")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp7l7"]
 bg_color = Color(0.021181231, 0.065696925, 0.17947686, 0.53333336)
 corner_radius_top_left = 5
@@ -119,26 +219,61 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qp7l7")
 
-[node name="Bird" type="AnimatedSprite2D" parent="." unique_id=1470943870]
+[node name="Bird" type="AnimatedSprite2D" parent="." unique_id=1650399358]
 visible = false
 position = Vector2(138.00002, 70)
 scale = Vector2(0.29411766, 0.21097048)
-sprite_frames = SubResource("SpriteFrames_4303f")
+sprite_frames = SubResource("SpriteFrames_ek68o")
 autoplay = "default"
 
-[node name="SerbKitty" type="AnimatedSprite2D" parent="." unique_id=1218521960]
+[node name="SerbKitty" type="AnimatedSprite2D" parent="." unique_id=1622774374]
 visible = false
 position = Vector2(139, 69)
 scale = Vector2(0.056640625, 0.11631944)
-sprite_frames = SubResource("SpriteFrames_ek68o")
+sprite_frames = SubResource("SpriteFrames_4303f")
 autoplay = "default"
-frame_progress = 0.10833292
 
-[node name="Sajkaca" type="AnimatedSprite2D" parent="." unique_id=1723390222]
+[node name="Sajkaca" type="AnimatedSprite2D" parent="." unique_id=1153558119]
 visible = false
 position = Vector2(139, 70)
 scale = Vector2(0.3011583, 0.40979382)
 sprite_frames = SubResource("SpriteFrames_c4ghl")
+autoplay = "default"
+
+[node name="ASkin1" type="AnimatedSprite2D" parent="." unique_id=46840144]
+visible = false
+position = Vector2(136, 69)
+scale = Vector2(0.15527949, 0.14044943)
+sprite_frames = SubResource("SpriteFrames_yq04o")
+autoplay = "default"
+
+[node name="ASkin2" type="AnimatedSprite2D" parent="." unique_id=573050971]
+visible = false
+position = Vector2(136, 69.000015)
+scale = Vector2(0.22222222, 0.14749265)
+sprite_frames = SubResource("SpriteFrames_y68tr")
+animation = &"jump"
+autoplay = "default"
+
+[node name="ASkin3" type="AnimatedSprite2D" parent="." unique_id=311621511]
+visible = false
+position = Vector2(136.0411, 69)
+scale = Vector2(0.20358613, 0.15923567)
+sprite_frames = SubResource("SpriteFrames_pn3l6")
+autoplay = "default"
+
+[node name="ASkin4" type="AnimatedSprite2D" parent="." unique_id=1948981880]
+visible = false
+position = Vector2(136, 69.00001)
+scale = Vector2(0.22831048, 0.15923569)
+sprite_frames = SubResource("SpriteFrames_g3cvk")
+autoplay = "default"
+
+[node name="ASkin5" type="AnimatedSprite2D" parent="." unique_id=302821965]
+visible = false
+position = Vector2(136, 68.99999)
+scale = Vector2(0.310559, 0.2173913)
+sprite_frames = SubResource("SpriteFrames_nche2")
 autoplay = "default"
 
 [node name="SkinName" type="Label" parent="." unique_id=1649750160]

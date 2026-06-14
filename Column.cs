@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
 
 public partial class Column : Area2D
 {
@@ -8,18 +8,30 @@ public partial class Column : Area2D
 	[Signal]
 	public delegate void TouchedColumnEventHandler();
 	// float height = GetViewport().GetVisibleRect().Size.Y;
+	Dictionary<string, Tuple<Texture2D, Texture2D>> txtrs;
 	public bool isUp;
+	public string mapName = "";
 	public override void _Ready()
 	{
 		AreaEntered += OnEnter;
 	}
 	public void SetOr(bool isup)
 	{
-		if(isup) GetNode<Sprite2D>("Columnup").Show();
-		else GetNode<Sprite2D>("Columndown").Show();
+		if(isup) GetNode<Sprite2D>("Columnup"+mapName).Show();
+		else GetNode<Sprite2D>("Columndown"+mapName).Show();
 		isUp = isup;
 	}
-	
+	public void HideCurrOr()
+	{
+		if(isUp) GetNode<Sprite2D>("Columnup"+mapName).Hide();
+		else GetNode<Sprite2D>("Columndown"+mapName).Hide();
+	}
+	public void SetMap(string nmapName)
+	{
+		HideCurrOr();
+		mapName = nmapName;
+		SetOr(isUp);
+	}	
 	public void OnEnter(Area2D area2D)
 	{
 		if(area2D.Name == "trigger") 

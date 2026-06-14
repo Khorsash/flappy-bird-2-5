@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4whbpv87i6l" path="res://textures/columndown.png" id="1_2e7mv"]
 [ext_resource type="Script" uid="uid://b8wvwqknt0w7t" path="res://Column.cs" id="1_so666"]
 [ext_resource type="Texture2D" uid="uid://dbd0kv2tu0f7h" path="res://textures/columnup.png" id="2_so666"]
+[ext_resource type="Texture2D" uid="uid://b05qeqqoqd8x3" path="res://textures/palm.png" id="4_epfla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epfla"]
 size = Vector2(177, 360)
@@ -24,3 +25,26 @@ texture = ExtResource("1_2e7mv")
 visible = false
 position = Vector2(90, -182)
 texture = ExtResource("2_so666")
+
+[node name="ColumndownMap1" type="Sprite2D" parent="." unique_id=979603334]
+visible = false
+position = Vector2(85.71429, -181)
+texture = ExtResource("1_2e7mv")
+
+[node name="ColumnupMap1" type="Sprite2D" parent="." unique_id=1250942794]
+visible = false
+position = Vector2(90, -182)
+texture = ExtResource("2_so666")
+
+[node name="ColumnupMap2" type="Sprite2D" parent="." unique_id=958300444]
+visible = false
+position = Vector2(87, -182)
+scale = Vector2(0.25428572, 0.51714283)
+texture = ExtResource("4_epfla")
+
+[node name="ColumndownMap2" type="Sprite2D" parent="." unique_id=437167222]
+visible = false
+position = Vector2(89, -180.50003)
+scale = Vector2(0.2542857, 0.5157143)
+texture = ExtResource("4_epfla")
+flip_v = true
