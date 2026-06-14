@@ -79,7 +79,7 @@ public partial class Main : Node2D
 	}
 	public void OnMapChange()
 	{
-		GD.Print($"Map before: {Map}");
+		// GD.Print($"Map before: {Map}");
 		try 
 		{
 			GetNode<Sprite2D>(Map).Hide();
@@ -90,12 +90,13 @@ public partial class Main : Node2D
 		{
 			GD.Print(e.ToString());
 		}
-		GD.Print($"Map after: {Map}");
+		// GD.Print($"Map after: {Map}");
 	}
 
 	public void OnGameOver()
 	{
 		GD.Print("YOU LOSE");
+		GetNode<Sprite2D>("Strasno").Hide();
 		audi0.Stop();
 		audi0.Stream = bg;
 		audi0.Play();
@@ -107,6 +108,7 @@ public partial class Main : Node2D
 		menu.PlayAgain();
 		skinChooser.Show();
 		mapChooser.Show();
+
 	}
 
 	public void StartGame()
@@ -115,6 +117,7 @@ public partial class Main : Node2D
 		skinChooser.Hide();
 		mapChooser.Hide();
 		scorelabel.Show();
+		GetNode<Sprite2D>("Strasno").Show();
 		bird.isRunning = true;
 		bird.SetHeight(ScreenSize.Y/10);
 		score = 0;
