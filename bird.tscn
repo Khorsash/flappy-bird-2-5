@@ -11,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bnqxe41k6aaeb" path="res://textures/bird5.png" id="9_k3v35"]
 [ext_resource type="Texture2D" uid="uid://7805t2qxludm" path="res://textures/s.png" id="10_6nk3w"]
 [ext_resource type="Texture2D" uid="uid://bgv06d35fgvkj" path="res://textures/s1.png" id="11_w265n"]
+[ext_resource type="Texture2D" uid="uid://cxscx121sek1x" path="res://textures/image222.png" id="12_l2t0q"]
+[ext_resource type="Texture2D" uid="uid://ct4jil5ya84p0" path="res://textures/image228.png" id="13_vab2h"]
+[ext_resource type="Texture2D" uid="uid://cla4u3j04uy2r" path="res://textures/image.png" id="14_548is"]
+[ext_resource type="Texture2D" uid="uid://bn0cuy5k52nq7" path="res://textures/image230.png" id="14_f430k"]
+[ext_resource type="Texture2D" uid="uid://dc246jkvoil2w" path="res://textures/image229.png" id="16_bn747"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owhn0"]
 size = Vector2(50, 50)
@@ -18,35 +23,7 @@ size = Vector2(50, 50)
 [sub_resource type="BoxMesh" id="BoxMesh_g5k2s"]
 size = Vector3(50, 50, 5)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_j88tq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_6ljjq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_j88tq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_axl6x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_j88tq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_6ljjq")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 15.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6ljjq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd6dp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -77,7 +54,35 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k3v35"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vox6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6ljjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j88tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axl6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j88tq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6ljjq")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7h38"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -99,6 +104,101 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_81qbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_l2t0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_l2t0q")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnuwx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_vab2h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_vab2h")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6rnj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_548is")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_548is")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06prv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_f430k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_f430k")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixa13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_bn747")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_bn747")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
 [node name="Bird" type="CharacterBody2D" unique_id=57461073]
 script = ExtResource("1_crnqq")
 
@@ -116,25 +216,58 @@ shape = SubResource("RectangleShape2D_owhn0")
 
 [node name="audi" type="AudioStreamPlayer" parent="." unique_id=1749744408]
 
-[node name="SerbKitty" type="AnimatedSprite2D" parent="." unique_id=77676791]
+[node name="Bird" type="AnimatedSprite2D" parent="." unique_id=1132558036]
 visible = false
-position = Vector2(3.9999998, -2)
-scale = Vector2(0.056640625, 0.11631944)
-sprite_frames = SubResource("SpriteFrames_j88tq")
-animation = &"jump"
-autoplay = "default"
-
-[node name="Bird" type="AnimatedSprite2D" parent="." unique_id=2080958627]
-visible = false
+position = Vector2(-1.5258789e-05, 0)
 scale = Vector2(0.29411766, 0.21097048)
-sprite_frames = SubResource("SpriteFrames_6ljjq")
+sprite_frames = SubResource("SpriteFrames_dd6dp")
+autoplay = "default"
+
+[node name="SerbKitty" type="AnimatedSprite2D" parent="." unique_id=397668152]
+visible = false
+position = Vector2(3.0000005, -0.4999982)
+scale = Vector2(0.054687496, 0.08854167)
+sprite_frames = SubResource("SpriteFrames_vox6r")
+autoplay = "default"
+frame_progress = 0.7762211
+
+[node name="Sajkaca" type="AnimatedSprite2D" parent="." unique_id=838543831]
+visible = false
+position = Vector2(-2.861023e-06, 1.9073486e-06)
+scale = Vector2(0.19305019, 0.25773194)
+sprite_frames = SubResource("SpriteFrames_a7h38")
+autoplay = "default"
+
+[node name="ASkin1" type="AnimatedSprite2D" parent="." unique_id=1151892351]
+visible = false
+scale = Vector2(0.15527949, 0.14044943)
+sprite_frames = SubResource("SpriteFrames_81qbw")
+autoplay = "default"
+
+[node name="ASkin2" type="AnimatedSprite2D" parent="." unique_id=923862847]
+visible = false
+position = Vector2(1.2218952e-06, 1.5258789e-05)
+scale = Vector2(0.22222222, 0.14749265)
+sprite_frames = SubResource("SpriteFrames_qnuwx")
 animation = &"jump"
 autoplay = "default"
 
-[node name="Sajkaca" type="AnimatedSprite2D" parent="." unique_id=179787213]
+[node name="ASkin3" type="AnimatedSprite2D" parent="." unique_id=797027325]
 visible = false
-position = Vector2(2, 2)
-scale = Vector2(0.3011583, 0.40979382)
-sprite_frames = SubResource("SpriteFrames_k3v35")
-animation = &"jump"
+position = Vector2(0.041095734, 0)
+scale = Vector2(0.20358613, 0.15923567)
+sprite_frames = SubResource("SpriteFrames_a6rnj")
+autoplay = "default"
+
+[node name="ASkin4" type="AnimatedSprite2D" parent="." unique_id=1740067007]
+visible = false
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(0.22831048, 0.15923569)
+sprite_frames = SubResource("SpriteFrames_06prv")
+autoplay = "default"
+
+[node name="ASkin5" type="AnimatedSprite2D" parent="." unique_id=739176265]
+visible = false
+scale = Vector2(0.310559, 0.2173913)
+sprite_frames = SubResource("SpriteFrames_ixa13")
 autoplay = "default"

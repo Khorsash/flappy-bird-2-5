@@ -23,6 +23,7 @@ public partial class SkinChooser : Control
 		EmitSignal(SignalName.SkinChanged);
 		GetNode<Button>("Next").ButtonUp += NextSkin;
 		GetNode<Button>("Previous").ButtonUp += PreviousSkin;
+		// string[] files = ResourceLoader.ListDirectory(path);
 	}
 
 	public void ShowSkin(string newSkin)
